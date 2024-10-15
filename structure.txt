@@ -1,0 +1,18 @@
+10gclass.vercel.app/
+├── client/ (React Frontend)
+│   ├── public/ (Static Files)
+│   ├── src/
+│   │   ├── components/ (Reusable Components)
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── EventCard.js
+│   │   │   ├── GalleryImage.js
+│   │   │   ├── ImageGrid.js
+│   │   │   └── Loading.js
+│   │   ├── pages/ (Page Components)
+│   │   │   ├── Home.js
+│   │   │   ├── GalleryPage.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── styles.css
+└── README.md
