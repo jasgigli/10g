@@ -12,13 +12,20 @@ const Home = () => {
         joy!
       </p>
 
-      <motion.img
-        src="../public/Group Photo.jpg"
-        alt="Reunion"
-        className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
-        whileHover={{ scale: 1.05 }}
-      />
-
+      <div className="flex space-x-5">
+        <motion.img
+          src="/school.jpeg"
+          alt="../public/school"
+          className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+        />
+        <motion.img
+          src="../public/10g.jpg"
+          alt="Reunion"
+          className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+        />
+      </div>
       <p className="text-center mb-8 max-w-md">
         We have exciting activities planned, along with a gallery of memories to
         cherish.
