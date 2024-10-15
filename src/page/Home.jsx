@@ -20,7 +20,7 @@ const Home = () => {
           whileHover={{ scale: 1.05 }}
         />
         <motion.img
-          src="../public/10g.jpg"
+          src="/10g.jpg"
           alt="Reunion"
           className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
           whileHover={{ scale: 1.05 }}
