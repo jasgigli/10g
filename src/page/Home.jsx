@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // For animations
 import { useState } from "react"; // For managing form state
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -42,21 +43,60 @@ const Home = () => {
         cherish.
       </p>
 
-      <div className="flex flex-col md:flex-row justify-center mb-10 space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-        <motion.a
-          href="/gallery"
-          className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300 w-full md:w-auto"
+      {/* <div className="flex flex-col items-center justify-center space-y-6">
+        <motion.div
           whileHover={{ scale: 1.05 }}
+          className="flex flex-col md:flex-row justify-center mb-10 space-x-0 md:space-x-4 space-y-4 md:space-y-0"
         >
-          View Gallery
-        </motion.a>
-        <motion.a
-          href="/friends"
-          className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300 w-full md:w-auto"
+          <Link
+            to="/gallery"
+            className="bg-gradient-to-r from-pink-400 via-red-300 to-purple-300 text-white font-semibold px-8 py-3 rounded-full shadow-xl hover:bg-gradient-to-l hover:from-purple-300 hover:via-red-300 hover:to-pink-400 transition-all duration-300 w-full md:w-auto transform hover:scale-110 hover:-translate-y-1"
+          >
+            <span className="inline-block align-middle">💔 View Gallery</span>
+          </Link>
+        </motion.div>
+
+        <motion.div
           whileHover={{ scale: 1.05 }}
+          className="flex flex-col md:flex-row justify-center"
         >
-          Friends Gallery
-        </motion.a>
+          <Link
+            to="/friends"
+            className="bg-gradient-to-r from-purple-400 via-red-400 to-pink-500 text-white font-semibold px-8 py-3 rounded-full shadow-xl hover:bg-gradient-to-l hover:from-pink-500 hover:via-red-400 hover:to-purple-400 transition-all duration-300 w-full md:w-auto transform hover:scale-110 hover:-translate-y-1"
+          >
+            <span className="inline-block align-middle">
+              💔 Friends Gallery
+            </span>
+          </Link>
+        </motion.div>
+      </div> */}
+
+      <div className="flex flex-col items-center justify-center space-y-8 mb-5">
+        {/* Tiger-inspired button */}
+        <motion.div
+          whileHover={{ scale: 1.1, rotate: 2 }}
+          className="flex flex-col md:flex-row justify-center mb-12 space-x-0 md:space-x-4 space-y-4 md:space-y-0"
+        >
+          <Link
+            to="/gallery"
+            className="bg-gradient-to-r from-orange-600 via-red-500 to-yellow-500 text-white font-extrabold text-xl md:text-2xl px-12 py-6 rounded-xl shadow-2xl hover:bg-gradient-to-l hover:from-yellow-500 hover:via-red-600 hover:to-orange-600 transition-all duration-300 w-full md:w-auto transform hover:scale-110 hover:-translate-y-2"
+          >
+            <span className="inline-block align-middle">🐾 Tiger Gallery</span>
+          </Link>
+        </motion.div>
+
+        {/* Eagle-inspired button */}
+        <motion.div
+          whileHover={{ scale: 1.1, rotate: -2 }}
+          className="flex flex-col md:flex-row justify-center"
+        >
+          <Link
+            to="/friends"
+            className="bg-gradient-to-r from-gray-700 via-black to-gray-900 text-white font-extrabold text-xl md:text-2xl px-12 py-6 rounded-xl shadow-2xl hover:bg-gradient-to-l hover:from-gray-900 hover:via-black hover:to-gray-700 transition-all duration-300 w-full md:w-auto transform hover:scale-110 hover:-translate-y-2"
+          >
+            <span className="inline-block align-middle">🦅 Eagle Friends</span>
+          </Link>
+        </motion.div>
       </div>
 
       <section className="bg-white text-gray-800 rounded-lg p-6 mb-10 max-w-3xl w-full shadow-lg">
