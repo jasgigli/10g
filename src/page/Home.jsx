@@ -1,7 +1,17 @@
 import React from "react";
-import { motion } from "framer-motion"; // Optional: for animations
+import { motion } from "framer-motion"; // For animations
+import { useState } from "react"; // For managing form state
 
 const Home = () => {
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    alert(`Thank you, ${name}! We have noted your availability for ${date}.`);
+  };
+
   return (
     <div className="bg-gradient-to-r from-indigo-600 to-purple-700 min-h-screen flex flex-col justify-center items-center text-white p-4 sm:p-6">
       <h1 className="text-4xl sm:text-6xl font-extrabold text-center mb-4 shadow-lg drop-shadow-md">
@@ -12,38 +22,41 @@ const Home = () => {
         joy!
       </p>
 
-      <div className="flex space-x-5">
+      <div className="flex flex-col md:flex-row justify-center mb-8 space-x-0 md:space-x-5">
         <motion.img
           src="/school.jpeg"
-          alt="../public/school"
-          className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
+          alt="School"
+          className="w-full md:w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
           whileHover={{ scale: 1.05 }}
         />
         <motion.img
           src="/10g.jpg"
           alt="Reunion"
-          className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
+          className="w-full md:w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
           whileHover={{ scale: 1.05 }}
         />
       </div>
+
       <p className="text-center mb-8 max-w-md">
         We have exciting activities planned, along with a gallery of memories to
         cherish.
       </p>
 
-      <div className="flex flex-col md:flex-row justify-center mb-10 space-x-4 space-y-4 md:space-y-0">
-        <a
+      <div className="flex flex-col md:flex-row justify-center mb-10 space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+        <motion.a
           href="/gallery"
           className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300 w-full md:w-auto"
+          whileHover={{ scale: 1.05 }}
         >
           View Gallery
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="/friends"
           className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300 w-full md:w-auto"
+          whileHover={{ scale: 1.05 }}
         >
           Friends Gallery
-        </a>
+        </motion.a>
       </div>
 
       <section className="bg-white text-gray-800 rounded-lg p-6 mb-10 max-w-3xl w-full shadow-lg">
@@ -69,16 +82,23 @@ const Home = () => {
           entering your name and selecting a date below:
         </p>
 
-        <form className="flex flex-col items-center mt-6">
+        <form
+          className="flex flex-col items-center mt-6"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             placeholder="Enter your name"
             className="border border-gray-400 rounded-lg p-3 mb-4 w-full max-w-xs shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
           <input
             type="date"
             className="border border-gray-400 rounded-lg p-3 mb-4 w-full max-w-xs shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
             required
           />
           <button
@@ -89,6 +109,19 @@ const Home = () => {
           </button>
         </form>
       </section>
+
+      {/* Heart-Touching Quote */}
+      <motion.div
+        className="mt-10 p-4 bg-gray-200 rounded-lg shadow-lg max-w-md text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <p className="text-gray-800 italic">
+          "A reunion is not just a gathering of friends; it’s a reminder of the
+          love and memories we’ve built together. Let's cherish these moments!"
+        </p>
+      </motion.div>
     </div>
   );
 };
