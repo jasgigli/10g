@@ -13,7 +13,7 @@ const Home = () => {
       </p>
 
       <motion.img
-        src="../public/Group Photo.jpg" // Ensure the image path is correct
+        src="../public/Group Photo.jpg"
         alt="Reunion"
         className="w-64 h-auto rounded-lg shadow-2xl mb-4 transition-transform duration-500 transform hover:scale-105"
         whileHover={{ scale: 1.05 }}

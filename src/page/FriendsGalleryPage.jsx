@@ -1,3 +1,4 @@
+// src/page/FriendsGalleryPage.js
 import React from "react";
 
 const FriendsGalleryPage = () => {
@@ -14,28 +15,28 @@ const FriendsGalleryPage = () => {
     { name: "Asad Khan", img: "/Asad Khan.jpeg" },
     { name: "Fahad Khan", img: "/Fahad Khan 2.jpeg" },
     { name: "Hasnain Khan", img: "/Hasnain.jpeg" },
-    { name: "Adocate Ibrar Khan", img: "/Ibrar Khan.jpeg" },
+    { name: "Advocate Ibrar Khan", img: "/Ibrar Khan.jpeg" },
     { name: "Idress Khan", img: "/Idress Khan.jpeg" },
     { name: "Imran Khan", img: "/Imran.jpeg" },
     { name: "Irshad Khan", img: "/Irshad Khan.jpeg" },
     { name: "Junaid Ali Shah", img: "/Junaid Ali Shah.jpg" },
-    { name: "Dr. Mohsain Khan", img: "/Mohsain Khan.jpeg" },
-    { name: "Dr. Uzair Khan", img: "/Dr. Uzair Khan.jpeg" },
+    { name: "Mohsain Khan", img: "/Mohsain Khan.jpeg" },
+    { name: "Uzair Khan", img: "/Uzair.jpeg" },
     { name: "Murtaza Khan", img: "/Murtaza.jpeg" },
     { name: "Usman Khan", img: "/Usman Khan.jpeg" },
-    { name: "kamran Gulab", img: "/kamran.jpeg" },
-    { name: "shahzab", img: "/shahzab.jpeg" },
+    { name: "Kamran Gulab", img: "/kamran.jpeg" },
+    { name: "Shahzab", img: "/shahzab.jpeg" },
     { name: "Zakir Khan", img: "/Zakir Khan.jpeg" },
-
     // Add more friends and their images here
   ];
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 md:p-8">
       <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">
         Friends Gallery
       </h1>
-      <div className="grid grid-cols-1 gap-6">
+      {/* Responsive grid layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {friends.map((friend, index) => (
           <div
             key={index}
@@ -44,10 +45,12 @@ const FriendsGalleryPage = () => {
             <img
               src={friend.img}
               alt={friend.name}
-              className="w-full h-auto max-h-64 object-cover transition duration-500 rounded-lg"
+              className="w-full h-48 object-cover transition duration-500 rounded-lg"
             />
-            <div className="p-2 text-center">
-              <h3 className="text-lg font-semibold">{friend.name}</h3>
+            <div className="p-4 text-center bg-white rounded-b-lg shadow-inner">
+              <h3 className="text-lg font-semibold text-gray-800">
+                {friend.name}
+              </h3>
             </div>
           </div>
         ))}

@@ -2,33 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.loader {
-  border-top-color: transparent;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /* styles.css */
 body {
   font-family: "Arial", sans-serif; /* Example font */
-}
-
-h1,
-h2 {
-  font-family: "Roboto", sans-serif; /* Modern font */
-}
-
-/* Add other custom styles as needed */
-.bg-gradient {
-  background: linear-gradient(to right, #4facfe, #00f2fe);
 }
 
 /* Custom animations */
